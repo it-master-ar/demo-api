@@ -1,36 +1,34 @@
-const MongoClient = require('mongodb').MongoClient;
-const config      = require('./config');
+const MongoClient = require('mongodb').MongoClient
+const config = require('./config')
 
-
-module.exports = function(nomad) {
-
+module.exports = function (nomad) {
   nomad.driver({
-    connect(cb) {
+    connect (cb) {
       MongoClient.connect(config.server.url, (err, db) => {
-        if (err) { return cb(err); }
-        this.db = db;
-        cb(null, db);
-      });
+        if (err) { return cb(err) }
+        this.db = db
+        cb(null, db)
+      })
     },
 
-    disconnect(cb) {
-      this.db.close(cb);
+    disconnect (cb) {
+      this.db.close(cb)
     },
 
-    createMigration(migration, cb) {
-      this.db.collection('migrations').insertOne(migration, cb);
+    createMigration (migration, cb) {
+      this.db.collection('migrations').insertOne(migration, cb)
     },
 
-    updateMigration(filename, migration, cb) {
+    updateMigration (filename, migration, cb) {
       this.db.collection('migrations').updateOne({
         filename
       }, {
         $set: migration
-      }, cb);
+      }, cb)
     },
 
-    getMigrations(cb) {
-      this.db.collection('migrations').find().toArray(cb);
+    getMigrations (cb) {
+      this.db.collection('migrations').find().toArray(cb)
     }
-  });
-};
+  })
+}

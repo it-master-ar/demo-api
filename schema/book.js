@@ -1,13 +1,12 @@
-const Schema        = require('mongoose').Schema;
-const mongooseSlugs = require('../lib/mongoose-slugs');
-
+const Schema = require('mongoose').Schema
+const mongooseSlugs = require('../lib/mongoose-slugs')
 
 const bookSchema = new Schema({
-  title: { type: String },
-  body:  { type: String }
-});
+  author: { type: String, required: true },
+  title: { type: String, required: true },
+  publishedDate: { type: Date }
+})
 
-bookSchema.plugin(mongooseSlugs);
+bookSchema.plugin(mongooseSlugs)
 
-
-module.exports = bookSchema;
+module.exports = bookSchema
