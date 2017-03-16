@@ -16,7 +16,7 @@
     "cover": "istanbul cover _mocha test/*.spec.js",
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint . --fix .js",
-    "config": "./bin/demo-api --explain-config"
+    "config": "./bin/books-demo-api --explain-config"
   },
   "author": {
     "name": "Ignacio Anaya",

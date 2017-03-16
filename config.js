@@ -2,7 +2,7 @@ const milieu = require('milieu')
 
 const config = milieu('demoapi', {
   server: {
-    url: 'http://localhost:9999',
+    url: `http://localhost:${process.env.PORT || 9999}`,
     maxResultsLimit: 1000
   },
 
