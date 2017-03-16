@@ -1,0 +1,26 @@
+#! /usr/bin/env node
+
+const pkg = require('../package');
+
+console.log();
+console.log();
+console.log('     _                                        _ ');
+console.log('  __| | ___ _ __ ___   ___         __ _ _ __ (_)');
+console.log(' / _` |/ _ \\ \'_ ` _ \\ / _ \\ _____ / _` | \'_ \\| |');
+console.log('| (_| |  __/ | | | | | (_) |_____| (_| | |_) | |');
+console.log(' \\__,_|\\___|_| |_| |_|\\___/       \\__,_| .__/|_|');
+console.log('                                       |_|      ');
+console.log();
+console.log();
+console.log(`version: ${pkg.version} revision: ${pkg.revision}`);
+console.log();
+console.log();
+
+
+const demoApi = require('../');
+
+
+demoApi.start((err, result) => {
+  if (err) { throw err; }
+  demoApi.logger.info('Listening for HTTP requests at %s', result.url);
+});
