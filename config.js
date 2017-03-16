@@ -7,7 +7,7 @@ const config = milieu('demoapi', {
   },
 
   mongo: {
-    url: 'mongodb://localhost/demo-api'
+    url: process.env.MONGO_URL || 'mongodb://localhost/demo-api'
   },
 
   logger: {
