@@ -1,9 +1,8 @@
 const winston = require('winston')
-const winstonChildLogger = require('./lib/winston-child-logger')
-const SentryTransport = require('./lib/winston-sentry-transport')
-const config = require('./config')
+const childTransport = require('./child-transport')
+const config = require('../config')
 
-const logger = winstonChildLogger(new winston.Logger())
+const logger = childTransport(new winston.Logger())
 
 logger.levelLength = 7
 logger.padLevels = true
@@ -17,10 +16,6 @@ logger.filters.push((_, message, meta) => {
 
 if (config.logger.console) {
   logger.add(winston.transports.Console, config.logger.console)
-}
-
-if (config.logger.sentry) {
-  logger.add(SentryTransport, config.logger.sentry)
 }
 
 module.exports = logger

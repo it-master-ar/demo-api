@@ -8,10 +8,10 @@
     "demo-api": "./bin/demo-api"
   },
   "scripts": {
-    "start": "./bin/demo-api",
+    "start": "./bin/books-demo-api",
     "test": "mocha --bail test/*.spec.js",
-    "dev": "nodemon ./bin/demo-api",
-    "debug:start": "node-debug ./bin/demo-api",
+    "dev": "nodemon ./bin/books-demo-api",
+    "debug:start": "node-debug ./bin/books-demo-api",
     "debug:test": "node-debug _mocha test/*.spec.js",
     "cover": "istanbul cover _mocha test/*.spec.js",
     "eslint": "eslint . --ext .js",

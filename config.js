@@ -2,25 +2,15 @@ const milieu = require('milieu')
 
 const config = milieu('demoapi', {
   server: {
-    url: 'http://localhost:8000',
+    url: 'http://localhost:9999',
     maxResultsLimit: 1000
   },
+
   mongo: {
     url: 'mongodb://localhost/demo-api'
   },
-  vault: {
-    url: '',
-    token: ''
-  },
-  consul: {
-    url: 'http://localhost:8500',
-    statusPath: '/status',
-    interval: 6000
-  },
+
   logger: {
-    sentry: {
-      dsn: ''
-    },
     console: {
       level: 'silly',
       timestamp: true,

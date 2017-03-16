@@ -1,6 +1,6 @@
 const config = require('./config')
 const logger = require('./logger')
-const DemoApi = require('./lib/books-demo-api')
+const BooksDemoApi = require('./lib/books-demo-api')
 
-exports = module.exports = new DemoApi(config, logger)
-exports.DemoApi = DemoApi
+exports = module.exports = new BooksDemoApi(config, logger)
+exports.BooksDemoApi = BooksDemoApi
